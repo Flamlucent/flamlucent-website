@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Shop All Candles | Flamlucent</title>
+
+<style>
+
+:root {
+
+  --green:#202f19;
+
+  --gold:#b18a52;
+
+  --cream:#faf6ee;
+
+  --ink:#29291f;
+
+}
+
+* { box-sizing:border-box; }
+
+body {
+
+  margin:0;
+
+  background:var(--cream);
+
+  color:var(--ink);
+
+  font-family:Arial,sans-serif;
+
+}
+
+.announcement {
+
+  background:var(--green);
+
+  color:#fff;
+
+  text-align:center;
+
+  padding:12px;
+
+  font-size:12px;
+
+  letter-spacing:2px;
+
+}
+
+header {
+
+  background:#fffaf3;
+
+  padding:22px 6%;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:15px;
+
+  flex-wrap:wrap;
+
+  border-bottom:1px solid #e8ddcd;
+
+}
+
+.logo {
+
+  font-family:Georgia,serif;
+
+  font-size:27px;
+
+  letter-spacing:3px;
+
+  color:var(--green);
+
+}
+
+.logo span { color:var(--gold); }
+
+nav { display:flex;gap:20px;flex-wrap:wrap; }
+
+a { color:inherit;text-decoration:none; }
+
+nav a { font-size:13px; }
+
+.cart-link { font-size:14px;font-weight:bold; }
+
+.hero {
+
+  text-align:center;
+
+  padding:65px 20px 35px;
+
+}
+
+h1 {
+
+  font-family:Georgia,serif;
+
+  font-size:clamp(35px,5vw,55px);
+
+  font-weight:normal;
+
+  margin:0 0 14px;
+
+}
+
+.hero p { line-height:1.7;color:#645b50; }
+
+.gold { color:var(--gold);font-style:italic; }
+
+.toolbar {
+
+  max-width:1150px;
+
+  margin:20px auto;
+
+  padding:0 20px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+}
+
+select {
+
+  padding:12px;
+
+  background:white;
+
+  border:1px solid #d7c7b4;
+
+  border-radius:5px;
+
+}
+
+.products {
+
+  max-width:1150px;
+
+  margin:20px auto 75px;
+
+  padding:0 20px;
+
+  display:grid;
+
+  grid-template-columns:repeat(4,minmax(0,1fr));
+
+  gap:22px;
+
+}
+
+.product {
+
+  background:#fffaf4;
+
+  border:1px solid #e8ddce;
+
+  border-radius:12px;
+
+  overflow:hidden;
+
+  text-align:center;
+
+  padding-bottom:20px;
+
+}
+
+.photo {
+
+  height:260px;
+
+  background:linear-gradient(145deg,#e6d6c0,#c9b18d);
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  flex-direction:column;
+
+  color:var(--green);
+
+  gap:10px;
+
+}
+
+.candle-icon { font-size:70px; }
+
+.photo small { font-size:12px; }
+
+.product h2 {
+
+  font-family:Georgia,serif;
+
+  font-size:22px;
+
+  font-weight:normal;
+
+  padding:0 10px;
+
+}
+
+.product p { font-size:13px;color:#756a5e; }
+
+.price { font-weight:bold;font-size:18px;margin:16px; }
+
+button {
+
+  background:var(--green);
+
+  color:white;
+
+  border:0;
+
+  padding:13px 22px;
+
+  border-radius:5px;
+
+  cursor:pointer;
+
+}
+
+button:hover { background:#3d512e; }
+
+.note {
+
+  text-align:center;
+
+  color:#776d60;
+
+  font-style:italic;
+
+  padding:10px 20px 60px;
+
+}
+
+footer {
+
+  background:var(--green);
+
+  color:#f8f0e4;
+
+  text-align:center;
+
+  padding:45px 20px;
+
+}
+
+footer p { color:#e0c9a4; }
+
+@media(max-width:950px) {
+
+  .products { grid-template-columns:repeat(2,minmax(0,1fr)); }
+
+}
+
+@media(max-width:520px) {
+
+  header { justify-content:center;text-align:center; }
+
+  .logo { width:100%; }
+
+  nav { justify-content:center; }
+
+  .products { gap:12px;padding:0 12px; }
+
+  .photo { height:180px; }
+
+  .candle-icon { font-size:50px; }
+
+  .product h2 { font-size:18px; }
+
+  button { padding:12px 10px; }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="announcement">
+
+  ✦ FLAMLUCENT — LIGHT THE MOOD. SET THE INTENTION. ✦
+
+</div>
+
+<header>
+
+  <a href="index.html" class="logo">
+
+    <span>✧</span> FLAMLUCENT
+
+  </a>
+
+  <nav>
+
+    <a href="index.html">HOME</a>
+
+    <a href="shop.html">SHOP</a>
+
+  </nav>
+
+  <a href="cart.html" class="cart-link">
+
+    BAG (<span id="cartCount">0</span>)
+
+  </a>
+
+</header>
+
+<section class="hero">
+
+  <h1>Shop All <span class="gold">Candles</span></h1>
+
+  <p>
+
+    Thoughtful scents for every moment, mood, and season.<br>
+
+    Hand-poured with care. Made with intention.
+
+  </p>
+
+</section>
+
+<div class="toolbar">
+
+  <span>4 BEAUTIFUL SCENTS</span>
+
+  <select id="sort" onchange="renderProducts()">
+
+    <option value="default">Featured</option>
+
+    <option value="az">Name: A to Z</option>
+
+    <option value="za">Name: Z to A</option>
+
+  </select>
+
+</div>
+
+<main class="products" id="products"></main>
+
+<p class="note">
+
+  ♡ Every candle carries a little reminder just for you.
+
+</p>
+
+<footer>
+
+  <div class="logo" style="color:white">FLAMLUCENT</div>
+
+  <p>Light the mood. Set the intention.</p>
+
+  <small>Thank you for supporting small & intentional.</small>
+
+</footer>
+
+<script>
+
+const candles = [
+
+  {
+
+    id:"fresh-linen",
+
+    name:"Fresh Linen",
+
+    price:15,
+
+    color:"#d7d0b7",
+
+    note:"I am peaceful, present, & grateful"
+
+  },
+
+  {
+
+    id:"papaya-paradise",
+
+    name:"Papaya Paradise",
+
+    price:15,
+
+    color:"#e7a58b",
+
+    note:"A little moment of paradise"
+
+  },
+
+  {
+
+    id:"coconut-lime",
+
+    name:"Coconut Lime",
+
+    price:15,
+
+    color:"#a8b79b",
+
+    note:"Fresh, bright & uplifting"
+
+  },
+
+  {
+
+    id:"toasted-pumpkin-spice",
+
+    name:"Toasted Pumpkin Spice",
+
+    price:15,
+
+    color:"#c98a54",
+
+    note:"I am cozy, grateful & bright"
+
+  }
+
+];
+
+function getCart() {
+
+  try {
+
+    const data = JSON.parse(localStorage.getItem("flamlucentCart"));
+
+    return Array.isArray(data) ? data : [];
+
+  } catch {
+
+    return [];
+
+  }
+
+}
+
+function updateCount() {
+
+  document.getElementById("cartCount").textContent =
+
+    getCart().reduce((total,item) => total + item.quantity,0);
+
+}
+
+function addToCart(id) {
+
+  const product = candles.find(item => item.id === id);
+
+  if (!product) return;
+
+  const cart = getCart();
+
+  const existing = cart.find(item => item.id === id);
+
+  if (existing) {
+
+    existing.quantity += 1;
+
+  } else {
+
+    cart.push({
+
+      id:product.id,
+
+      name:product.name,
+
+      price:product.price,
+
+      quantity:1
+
+    });
+
+  }
+
+  localStorage.setItem("flamlucentCart",JSON.stringify(cart));
+
+  updateCount();
+
+  alert(product.name + " added to your bag!");
+
+}
+
+function renderProducts() {
+
+  const sort = document.getElementById("sort").value;
+
+  const list = [...candles];
+
+  if (sort === "az") {
+
+    list.sort((a,b) => a.name.localeCompare(b.name));
+
+  }
+
+  if (sort === "za") {
+
+    list.sort((a,b) => b.name.localeCompare(a.name));
+
+  }
+
+  document.getElementById("products").innerHTML =
+
+    list.map(product => `
+
+      <article class="product">
+
+        <div class="photo" style="background:linear-gradient(145deg,${product.color},#f5e9d9)">
+
+          <span class="candle-icon">🕯️</span>
+
+          <small>PRODUCT PHOTO COMING SOON</small>
+
+        </div>
+
+        <h2>${product.name}</h2>
+
+        <p>Hand-Poured Candle</p>
+
+        <p>${product.note}</p>
+
+        <div class="price">$${product.price.toFixed(2)}</div>
+
+        <button onclick="addToCart('${product.id}')">
+
+          ADD TO CART
+
+        </button>
+
+      </article>
+
+    `).join("");
+
+}
+
+renderProducts();
+
+updateCount();
+
+</script>
+
+</body>
+
+</html>
